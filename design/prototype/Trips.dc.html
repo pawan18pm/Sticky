@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trips and travel stats</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#14201B}a:hover{color:#C8371B}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #F1F3EF; color: #14201B; font-family: Inter, system-ui, sans-serif; position: relative; overflow: hidden">
+  <div style="padding: 60px 20px 100px; display: flex; flex-direction: column; gap: 18px">
+    <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: -0.6px">Trips</h1>
+
+    <div style="background: #14201B; color: #FFFFFF; border-radius: 22px; padding: 18px; display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; justify-content: space-between; align-items: baseline">
+        <span style="font-size: 13px; color: #C9D2CD">Your world so far</span>
+        <span style="font-size: 13px; color: #C9D2CD">since 2022</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+        <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px">4</span><span style="font-size: 12px; color: #C9D2CD">countries</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px">24</span><span style="font-size: 12px; color: #C9D2CD">places</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px">27</span><span style="font-size: 12px; color: #C9D2CD">days away</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <div style="height: 8px; border-radius: 4px; background: #34433C"><div style="width: 2%; min-width: 10px; height: 8px; border-radius: 4px; background: #F08A6F"></div></div>
+        <span style="font-size: 12px; color: #C9D2CD">4 of 195 countries · 3 places on your wishlist</span>
+      </div>
+    </div>
+
+    <sc-for list="{{years}}" as="yr" hint-placeholder-count="3">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 13px; font-weight: 600; color: #4E5B54">{{yr.year}}</span>
+        <sc-for list="{{yr.trips}}" as="t" hint-placeholder-count="1">
+          <a href="Memory.dc.html" style="display: flex; gap: 14px; align-items: center; padding: 10px; border-radius: 18px; background: #FFFFFF; text-decoration: none; color: #14201B">
+            <div style="width: 64px; height: 64px; border-radius: 14px; background: {{t.color}}; flex: none"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 3px">
+              <span style="font-weight: 600; font-size: 16px">{{t.place}}</span>
+              <span style="font-size: 13px; color: #4E5B54">{{t.meta}}</span>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4E5B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+          </a>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+
+  <nav style="position: absolute; left: 0; right: 0; bottom: 0; height: 84px; background: #F1F3EF; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: center; padding-bottom: 14px; box-sizing: border-box; border-top: 1px solid #DDE2DD">
+    <a href="MapHome.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; font-size: 11px; color: #4E5B54">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"></path><path d="M9 4v14M15 6v14"></path></svg>Map</a>
+    <a href="Trips.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; font-size: 11px; font-weight: 600; color: #14201B">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="13" rx="2"></rect><path d="M9 7V4h6v3"></path></svg>Trips</a>
+    <a href="AddMemory.dc.html" aria-label="Add memory" style="justify-self: center; width: 52px; height: 52px; border-radius: 18px; background: #C8371B; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 16px rgba(200,55,27,0.35)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></a>
+    <a href="Resurface.dc.html" style="display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; font-size: 11px; color: #4E5B54">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg>On this day</a>
+    <a href="#" style="display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; font-size: 11px; color: #4E5B54">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="9" r="4"></circle><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>Me</a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      years: [
+        { year: '2024', trips: [{ place: 'Kyoto, Japan', meta: 'Apr · 7 days · 6 places · 142 photos', color: '#E9B9A8' }] },
+        { year: '2023', trips: [
+          { place: 'Lisbon, Portugal', meta: 'Sep · 5 days · 4 places · 88 photos', color: '#F2CF8A' },
+          { place: 'Ring Road, Iceland', meta: 'Jun · 9 days · 11 places · 203 photos', color: '#A9C4CF' }
+        ] },
+        { year: '2022', trips: [{ place: 'Ubud, Bali', meta: 'Dec · 6 days · 3 places · 64 photos', color: '#9CC5A1' }] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

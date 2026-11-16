@@ -1,0 +1,26 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-11-16T10:00:00Z"},
+  "title": "Travel Memory App",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 390, "h": 844, "title": "1 · Welcome", "is_interactive": true, "radius": 36},
+    "Permissions.dc.html": {"x": 470, "y": 0, "w": 390, "h": 844, "title": "2 · Photo & location access", "is_interactive": true, "radius": 36},
+    "Import.dc.html": {"x": 940, "y": 0, "w": 390, "h": 844, "title": "3 · Auto-import trips", "is_interactive": true, "radius": 36},
+    "MapReady.dc.html": {"x": 1410, "y": 0, "w": 390, "h": 844, "title": "4 · Your map is ready", "is_interactive": true, "radius": 36},
+    "MapHome.dc.html": {"x": 0, "y": 1244, "w": 390, "h": 844, "title": "Map (home)", "is_interactive": true, "radius": 36},
+    "Memory.dc.html": {"x": 470, "y": 1244, "w": 390, "h": 844, "title": "Memory detail", "is_interactive": true, "radius": 36},
+    "AddMemory.dc.html": {"x": 940, "y": 1244, "w": 390, "h": 844, "title": "Add a memory", "is_interactive": true, "radius": 36},
+    "Trips.dc.html": {"x": 1410, "y": 1244, "w": 390, "h": 844, "title": "Trips & travel stats", "is_interactive": true, "radius": 36},
+    "Resurface.dc.html": {"x": 1880, "y": 1244, "w": 390, "h": 844, "title": "On this day + share", "is_interactive": true, "radius": 36}
+  },
+  "order": ["Main.dc.html", "Permissions.dc.html", "Import.dc.html", "MapReady.dc.html", "MapHome.dc.html", "Memory.dc.html", "AddMemory.dc.html", "Trips.dc.html", "Resurface.dc.html"],
+  "notes": {
+    "t1": {"x": 0, "y": -300, "text": "Onboarding — from install to a filled map in under a minute", "kind": "title1", "maxW": 1800},
+    "t2": {"x": 0, "y": 944, "text": "Core features — map, memories, trips, resurfacing", "kind": "title1", "maxW": 1800},
+    "s1": {"x": 1960, "y": 0, "w": 440, "fill": "orange", "text": "FEATURE SET\n\nMVP (prototype scope)\n• Photo upload + auto-pin from EXIF location/date\n• Map home: pins & clusters, tap → memory\n• Memory card: photos, note, date, place, mood\n• Trips: auto-grouped by date + distance\n\nNext\n• Voice notes, tagged travel companions\n• 'On this day' resurfacing\n• Travel stats (countries, km, cities)\n• Shareable trip map / postcard\n\nLater\n• Shared maps with friends & family\n• Printed map poster / photo book\n• Wishlist pins (places to go)"},
+    "s2": {"x": 1960, "y": 640, "w": 440, "fill": "blue", "text": "ONBOARDING PRINCIPLES\n\n1. Value before ask — show the map promise before requesting photo access.\n2. Explain why — location is read from photos, never tracked live.\n3. Zero empty state — auto-import fills the map on first open.\n4. One coach mark, not a tour — teach 'tap a pin'.\n\nKey metric: % of new users who open a memory in session 1."}
+  },
+  "designSystems": []
+}
